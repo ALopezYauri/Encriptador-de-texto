@@ -1,0 +1,587 @@
+*{ /*reseteamos*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*estilizamos el contenedor principal*/
+.main{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #021526;
+}  
+
+.logo img{
+    height: 80px;
+    width: 80px;
+}
+
+/*estilizamos el textarea*/
+.area__texto{
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    left: 12%;
+    top: 15%;
+    background: transparent;
+    resize: none;
+    outline: none;
+    border-radius: 32px;
+    color: #f6f3f3;
+    padding: 5%;
+    font-size: 32px;
+
+}
+
+.input__text label{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    transform: translateY(-100%);
+    color: #b5b5b5;
+    font-size: 40px;
+    font-family: "Inter";
+    pointer-events: none;
+}
+
+textarea:focus ~ label{    
+    /*top: 15%;
+    left: 15%;
+    font-size: 30px;
+    padding: 0 10px;*/
+    display: none;
+}
+
+.indicaciones{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 80%;
+    left: 12%;
+    top: 80%;
+}
+
+.indicaciones p{
+    font-family: "Intes";
+    font-style: normal;
+    font-weight: 400; /*peso de la etiqueta P, mientras mas peso mas negrita es la letra*/
+    color: #495057;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.input__botones{
+    display: flex; /*lo ahce flexxible para poder colocar propiedades y se acomode*/
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 82%;
+    gap: 2%;
+}
+
+.button__encripta{
+    align-items: center;
+    justify-content: center;
+    padding: 2%; /*define el espacio entre las letras y los extremos*/    
+    width: 25%;
+    background: #e4e7ea;
+    border-radius: 24px;
+    font-family: "Inter";
+    border: 1px solid #021526;
+    font-size: 32px;
+    line-height: 19px;/*definimos el ancho se linea del borde del boton*/
+    color: #021526;
+
+}
+
+.button__desencripta{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center; /*el texto sera justificado al centro*/
+    padding: 2%; /*define el espacio entre las letras y los extremos*/    
+    width: 25%;
+    background: #e4e7ea;
+    border: 1px solid #021526; /*propiedad utilizada para defirnir ancho, estilo y color del borde del boton*/
+    border-radius: 24px;
+    font-family: "Inter";
+    font-size: 32px;
+    line-height: 19px; /*definimos el ancho se linea del borde del boton*/
+    color: #021526;
+}
+
+.button__encripta:hover{
+    /*background-color: #6EACDA;*/
+    margin: 0.3%;
+    width: 24.5%;
+    pad: 8%;
+}
+
+.button__desencripta:hover{
+    /*background-color: #6EACDA;*/
+    margin: 0.3%;    
+    width: 24.5%;
+    pad: 8%;
+}
+
+.salida__texto{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 90%;    
+    left: 60%;
+    top: 5%;
+    background: #f6f3f3;   
+    border-radius: 32px;
+    text-align: center;
+}
+
+.salida__texto img{    
+    position: relative;
+    width: 80%;
+    height: 50%;
+    top: 10%;
+}
+
+.salida__texto_encriptado{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    top: 60%;
+    gap: 16px;
+    width: 100%;
+    position: absolute;
+    background: #f6f3f3;
+}
+
+.salida__texto_encriptado h2{
+    left: 32px;
+    height: 90%;
+    width: 90%;
+    font-family: "Inter";  
+    font-style: normal;
+    font-size: 24px;
+    color: #343A40;
+}
+
+.salida__texto_encriptado p{
+    width: 80%;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 16px;
+    color: #495057;
+}
+.output__button{
+    display: flex; /*lo ahce flexxible para poder colocar propiedades y se acomode*/
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 87%;
+}
+
+.button__copiar{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center; /*el texto sera justificado al centro*/
+    padding: 6% 0; /*define el espacio entre las letras y los extremos*/    
+    width: 100%;
+    background: #021526;
+    border: 1px solid #021526; /*propiedad utilizada para defirnir ancho, estilo y color del borde del boton*/
+    border-radius: 24px;
+    font-family: "Inter";
+    font-size: 32px;
+    line-height: 19px; /*definimos el ancho se linea del borde del boton*/
+    color: #e4e7ea;
+    display: none;
+}
+
+.button__desencripta:hover{    
+    margin: 0.3%;    
+    width: 24.5%;
+    pad: 8%;
+}
+
+.button__copiar:hover{
+    margin: 0.3%;
+    width: 100%;
+    pad: 8%;
+}
+
+
+/*responsive desing*/
+
+@media (max-width: 90em){
+    body{
+        background: #021526;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .entrada__texto{
+        width: 100%;
+        height: 100%;      
+    }
+
+    .input__text label{
+        position: absolute;
+        top: 18%;
+        left: 15%;
+        transform: translateY(-100%);
+        color: #b5b5b5;
+        font-size: 40px;
+        font-family: "Inter";
+        pointer-events: none;
+    }
+
+    .area__texto{
+        width: 80%;
+        height: 50%;
+        left: 10%;
+        top: 10%;
+        font-size: 16px;
+    }
+
+    .indicaciones{
+        width: 80%;
+        left: 10%;
+        top: 63%;
+    }
+
+    .indicaciones p{
+        font-size: 16px;
+    }
+    
+    .input__botones{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        top:68%;
+        gap: 10%;
+    }
+
+    .button__encripta, .button__desencripta{
+        width: 100%;
+        border-radius: 24px;
+        padding: 5%;
+    }
+
+    .button__desencripta:hover, 
+    .button__encripta:hover{
+        margin: 0.3%;
+        width: 100%;
+    }
+
+    .salida__texto{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        left: 10%;
+        top: 90%;
+        text-align: center;   
+    }
+
+    .salida__texto img{
+        display: none;
+    }
+
+    .salida__texto_encriptado{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 5%;
+        border-radius: 32px;
+        text-align: center;
+    }
+    .salida__texto_encriptado h2{                
+        font-family: "Inter";  
+        font-style: normal;
+        font-size: 24px;
+        color: #343A40;
+        text-align: center;
+    }  
+
+    .output__button{
+        display: flex;        
+        position: relative;
+        margin: 3%;
+        left: 0%;
+        width: 90%;        
+    }
+    .button__copiar{
+        width: 100%;
+        border-radius: 24px;
+        padding: 5%;
+        background: #021526;
+        color: #e4e7ea;
+    }
+
+    
+}
+@media (max-width: 57.5em){
+    body{
+        background: #021526;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .entrada__texto{
+        display: flex;
+        flex-direction: column;    
+        position: relative;    
+        width: 100%;
+        height: 100%;
+    }
+
+    .input__text label{
+        position: absolute;
+        top: 18%;
+        left: 15%;
+        transform: translateY(-100%);
+        color: #b5b5b5;
+        font-size: 30px;
+        font-family: "Inter";
+        pointer-events: none;
+    }
+
+    .area__texto{
+        width: 80%;
+        height: 50%;
+        left: 10%;
+        top: 10%;
+        font-size: 16px;
+    }
+
+    .indicaciones{
+        width: 80%;
+        left: 10%;
+        top: 61%;
+    }
+
+    .indicaciones p{
+        font-size: 12px;
+    }
+    
+    .input__botones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        top: 65%;
+        gap: 10%;
+    }
+
+    .button__encripta, .button__desencripta{
+        width: 100%;
+        border-radius: 24px;
+        padding: 5%;
+    }
+
+    .button__desencripta:hover, 
+    .button__encripta:hover{
+        margin: 0.3%;
+        width: 100%;
+    }
+
+    .salida__texto{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        left: 10%;
+        top: 85%;
+        text-align: center;   
+    }
+
+    .salida__texto img{
+        display: none;
+    }
+
+    .salida__texto_encriptado{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 5%;
+        border-radius: 32px;
+        text-align: center;
+    }
+    .salida__texto_encriptado h2{                
+        font-family: "Inter";  
+        font-style: normal;
+        font-size: 24px;
+        color: #343A40;
+        text-align: center;
+    }  
+
+    .output__button{
+        display: flex;        
+        position: relative;
+        margin: 3%;
+        left: 0%;
+        width: 90%;        
+    }
+    .button__copiar{
+        width: 100%;
+        border-radius: 24px;
+        padding: 5%;
+        background: #021526;
+        color: #e4e7ea;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.entrada__texto{
+    
+    background-color: #b5b5b5;
+    width: 100%;     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.input__text textarea{
+    width: 675px;
+    height: 500px;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: auto;
+    border: 2px solid aliceblue;
+    background: transparent;
+    outline: none;
+    resize: none;
+}
+
+
+
+textarea:focus ~ label{    
+    top: 0;
+    left: 200px;
+    font-size: 16px;
+    padding: 0 10px;
+    background: #b5b5b5;
+}
+
+.input__botones{
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    gap: 16px;
+}
+.input__botones p{
+    font-size: 14px;
+    
+}
+
+
+
+
+
+.output__text{
+    
+    display: none; /* esto oculpa el div 
+    position: relative;
+    height: 90%;          
+    justify-content: center;
+    width: 400px;
+    height: 900pz;
+}
+
+.output__button{
+    height: 5%;
+    display: none; /* esto oculpa el div
+}
+
+.output__text textarea{
+    width: 400px;
+    height: 585px;
+    border-radius: 6px;
+    font-size: 18px;
+    /*padding: auto;
+    border: 2px solid rgb(5, 18, 30);
+    background: transparent;
+   /* outline: none;
+    resize: none;
+}
+
+.input__botones{
+    display: flex;
+    flex-direction: column;    
+}
+
+.button{
+    border-radius: 24px;
+    text-align: center;
+    background-color: #0A3871;
+    width: 328px;
+    height: 67px;
+
+}
+*/

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/scartek.ico">
+</head>
+<body id="body">
+    <div class="main">
+        <div class="entrada__texto">
+            <div class="logo">
+                <img class="" src="assets/scartek.png" alt="imagen de logo">
+            </div>
+            <div class="input__text">                
+                <textarea class="area__texto" name="input" id="input" ></textarea>   
+                <label class="label" for="input">Ingrese el texto aqui</label>         
+            </div>
+            <div class="indicaciones">
+                <img class="icono__indicacion" src="assets/bi_exclamation-circle-fill.png" alt="icono">
+                <p>Solo letras mayusculas y con acento</p>
+            </div>
+            <div class="input__botones">      
+                <button class="button__encripta" id="button__encriptar" onclick="encriptar()">Encriptar</button>
+                <button class="button__desencripta" id="button__deencriptar" onclick="desencriptar()">Desencriptar</button>                          
+            </div>
+        </div>
+        <div class="salida__texto">            
+            <img id="img" src="assets/Muñeco.png" alt="img Muñeco">
+            <div class="salida__texto_encriptado" id="salida__texto_encriptado">
+                <h2 class="titulo__mensaje" id="titulo__mensaje">Ningun mensaje fue encontrado</h2>
+                <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
+            </div>
+            <div id="output__button" class="output__button">
+                <button class="button__copiar" id="button__copiar" onclick="copiar()">Copiar</button>
+            </div>
+        </div>            
+    </div>
+    <footer>
+
+    </footer>
+    <script src="app.js" ></script>
+</body>
+</html>
