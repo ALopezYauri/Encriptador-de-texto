@@ -1,0 +1,577 @@
+*{ /*reseteamos*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+/*estilizamos el contenedor principal*/
+.main{
+    position: relative;
+    width: 100vw;
+    height: 95vh;
+    background: #021526;
+}  
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    width: 60%;
+    height: 60%;
+}
+
+.logo img{
+    height: 100px;
+    width: 100px;
+}
+
+/*estilizamos el textarea*/
+.area__texto{
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    left: 12%;
+    top: 15%;
+    background: transparent;
+    resize: none;
+    outline: none;
+    border-radius: 32px;
+    color: #5B99C2;
+    padding: 5%;
+    font-size: 32px;
+    border-color: #5B99C2;
+
+}
+
+.input__text label{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    transform: translateY(-100%);
+    color: #5B99C2;
+    font-size: 40px;
+    font-family: "Inter";
+    pointer-events: none;
+}
+
+textarea:focus ~ label{    
+    display: none;
+}
+
+.indicaciones{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 80%;
+    left: 12%;
+    top: 80%;
+}
+
+.indicaciones p{
+    font-family: "Intes";
+    font-style: normal;
+    font-weight: 400; /*peso de la etiqueta P, mientras mas peso mas negrita es la letra*/
+    color: #495057;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.input__botones{
+    display: flex; /*lo ahce flexxible para poder colocar propiedades y se acomode*/
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 82%;
+    gap: 2%;
+}
+
+.button__encripta{
+    align-items: center;
+    justify-content: center;
+    padding: 2%; /*define el espacio entre las letras y los extremos*/    
+    width: 25%;
+    background: #e4e7ea;
+    border-radius: 24px;
+    font-family: "Inter";
+    border: 1px solid #021526;
+    font-size: 32px;
+    line-height: 19px;/*definimos el ancho se linea del borde del boton*/
+    color: #021526;
+
+}
+
+.button__desencripta{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center; /*el texto sera justificado al centro*/
+    padding: 2%; /*define el espacio entre las letras y los extremos*/    
+    width: 25%;
+    background: #e4e7ea;
+    border: 1px solid #021526; /*propiedad utilizada para defirnir ancho, estilo y color del borde del boton*/
+    border-radius: 24px;
+    font-family: "Inter";
+    font-size: 32px;
+    line-height: 19px; /*definimos el ancho se linea del borde del boton*/
+    color: #021526;
+}
+
+.button__encripta:hover{
+    /*background-color: #6EACDA;*/
+    margin: 0.3%;
+    width: 24.5%;
+    background-color: #021526;
+    color: #5B99C2;
+    border: 2px solid #5B99C2;
+}
+
+.button__desencripta:hover{
+    /*background-color: #6EACDA;*/
+    margin: 0.3%;    
+    width: 24.5%;
+    background-color: #021526;
+    color: #5B99C2;
+    border: 2px solid #5B99C2;
+}
+
+.salida__texto{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 87%;    
+    left: 60%;
+    top: 5%;
+    background: #f6f3f3;   
+    border-radius: 32px;
+    text-align: center;
+}
+
+.salida__texto img{    
+    position: relative;
+    width: 80%;
+    height: 50%;
+    top: 10%;
+}
+
+.salida__texto_encriptado{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    top: 60%;
+    gap: 16px;
+    width: 80%;
+    position: absolute;
+    background: #f6f3f3;
+}
+
+.salida__texto_encriptado h2{
+    left: 32px;
+    height: 90%;
+    width: 90%;
+    font-family: "Inter";  
+    font-style: normal;
+    font-size: 24px;
+    color: #5B99C2;
+}
+
+.salida__texto_encriptado p{
+    width: 80%;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 16px;
+    color: #021526;
+}
+.output__button{
+    display: flex; /*lo hace flexible para poder colocar propiedades y se acomode*/
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    height: 15%;
+    top: 84%;
+}
+
+.button__copiar{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center; /*el texto sera justificado al centro*/
+    padding: 6% 0; /*define el espacio entre las letras y los extremos*/    
+    width: 100%;
+    background: #021526;
+    border: 1px solid #021526; /*propiedad utilizada para defirnir ancho, estilo y color del borde del boton*/
+    border-radius: 24px;
+    font-family: "Inter";
+    font-size: 32px;
+    line-height: 19px; /*definimos el ancho se linea del borde del boton*/
+    color: #e4e7ea;
+    display: none;
+}
+
+.button__desencripta:hover{    
+    margin: 0.3%;    
+    width: 24.5%;
+    pad: 8%;
+}
+
+.button__copiar:hover{
+    margin: 0.3%;
+    width: 100%;    
+    background-color: #e4e7ea;
+    color: #021526;
+    border: 2px solid #021526;
+}
+
+.footer{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5%;
+    background-color: #5B99C2;
+    padding: 5px;
+    font-family: "Inter";
+}
+
+.copy{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2%;
+    width: 50%;
+}
+
+.footer__h2{
+    font-size: 15px;
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    width: 50%;
+}
+
+.redes__sociales{
+    height: 30px;
+    width: 30px;
+}
+
+
+/*responsive desing*/
+
+@media (max-width: 90em){
+    body{
+        background: #021526;
+        min-height: 100vh;   
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+    }
+    
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;        
+    }
+    
+    .logo img{
+        height: 100px;
+        width: 100px;
+    }
+    .entrada__texto{
+        width: 100%;
+        height: 100%;      
+    }
+
+    .input__text label{
+        position: absolute;
+        top: 18%;
+        left: 15%;
+        transform: translateY(-100%);
+        color: #5B99C2;
+        font-size: 40px;
+        font-family: "Inter";
+        pointer-events: none;
+    }
+
+    .area__texto{
+        width: 80%;
+        height: 50%;
+        left: 10%;
+        top: 10%;
+        font-size: 16px;
+    }
+
+    .indicaciones{
+        width: 80%;
+        left: 10%;
+        top: 63%;
+    }
+
+    .indicaciones p{
+        font-size: 16px;
+    }
+    
+    .input__botones{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        top:62%;
+        gap: 10%;
+    }
+
+    .button__encripta, .button__desencripta{
+        width: 100%;
+        border-radius: 24px;
+        padding: 5%;
+    }
+
+    .button__desencripta:hover, 
+    .button__encripta:hover{
+        margin: 0.3%;
+        width: 100%;
+    }
+
+    .salida__texto{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        left: 10%;
+        top: 80%;
+        text-align: center;   
+    }
+
+    .salida__texto img{
+        display: none;
+    }
+
+    .salida__texto_encriptado{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+        margin: 5%;
+        border-radius: 32px;
+        text-align: center;
+    }
+    .salida__texto_encriptado h2{                
+        font-family: "Inter";  
+        font-style: normal;
+        font-size: 24px;
+        color: #5B99C2;
+        text-align: center;
+    }  
+
+    .output__button{
+        display: flex;        
+        position: absolute;
+        margin: 3%;
+        left: 0%;
+        width: 90%;        
+    }
+    .button__copiar{
+        width: 100%;
+        border-radius: 24px;
+        padding: 5%;
+        background: #021526;
+        color: #e4e7ea;
+    }
+    .footer{        
+        position: absolute;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 5%;
+        margin-bottom: 0%;
+        margin-top: 75%;
+        background-color: #5B99C2;
+        font-family: "Inter";
+    }
+
+    .redes__sociales{
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer h2{
+        font-size: 20px;
+    }
+    
+}
+@media (max-width: 57.5em){
+    body{
+        background: #021526;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+        
+    .logo img{
+        height: 75px;
+        width: 75px;
+    }
+
+    .entrada__texto{
+        display: flex;
+        flex-direction: column;    
+        position: relative;    
+        width: 100%;
+        height: 100%;
+    }
+
+    .input__text label{
+        position: absolute;
+        top: 18%;
+        left: 15%;
+        transform: translateY(-100%);
+        color: #5B99C2;
+        font-size: 30px;
+        font-family: "Inter";
+        pointer-events: none;
+    }
+
+    .area__texto{
+        width: 80%;
+        height: 45%;
+        left: 10%;
+        top: 10%;
+        font-size: 16px;
+    }
+
+    .indicaciones{
+        width: 80%;
+        left: 10%;
+        top: 57%;
+    }
+
+    .indicaciones p{
+        font-size: 12px;
+    }
+    
+    .input__botones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        top: 59%;
+        gap: 10%;
+    }
+
+    .button__encripta, .button__desencripta{
+        width: 100%;
+        border-radius: 24px;
+        padding: 3%;
+    }
+
+    .button__desencripta:hover, 
+    .button__encripta:hover{
+        margin: 0.3%;
+        width: 100%;
+    }
+
+    .salida__texto{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: auto;
+        left: 10%;
+        top: 76%;
+        text-align: center;   
+    }
+
+    .salida__texto img{
+        display: none;
+    }
+
+    .salida__texto_encriptado{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 5%;
+        border-radius: 32px;
+        text-align: center;
+    }
+    .salida__texto_encriptado h2{                
+        font-family: "Inter";  
+        font-style: normal;
+        font-size: 24px;
+        color: #5B99C2;
+        text-align: center;
+    }  
+
+    .output__button{
+        display: flex;        
+        position: absolute;
+        left: 0%;
+        width: 90%;        
+    }
+    .button__copiar{
+        width: 100%;
+        border-radius: 24px;
+        padding: 5%;
+        background: #021526;
+        color: #e4e7ea;
+    }
+    
+    .footer{
+        position: absolute;;
+        width: 100%;
+        height: 5%;
+        background-color: #5B99C2;
+        padding: 5px;
+        top: 60%;
+        font-family: "Inter";
+    }
+
+    .redes__sociales{
+        width: 15px;
+        height: 15px;
+    }
+
+    .footer h2{
+        font-size: 10px;
+    }
+}
