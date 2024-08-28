@@ -220,6 +220,44 @@ textarea:focus ~ label{
     pad: 8%;
 }
 
+.footer{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5%;
+    background-color: #5B99C2;
+    padding: 5px;
+    font-family: "Inter";
+}
+
+.copy{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2%;
+    width: 50%;
+}
+
+.footer__h2{
+    font-size: 15px;
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    width: 50%;
+}
+
+.redes__sociales{
+    height: 30px;
+    width: 30px;
+}
 
 /*responsive desing*/
 
