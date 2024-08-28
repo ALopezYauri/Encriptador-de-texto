@@ -4,17 +4,29 @@
     box-sizing: border-box;
 }
 
+body{
+    min-height: 100vh;
+}
+
 /*estilizamos el contenedor principal*/
 .main{
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     background: #021526;
 }  
 
+.logo{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    width: 60%;
+    height: 60%;
+}
+
 .logo img{
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
 }
 
 /*estilizamos el textarea*/
@@ -28,9 +40,10 @@
     resize: none;
     outline: none;
     border-radius: 32px;
-    color: #f6f3f3;
+    color: #5B99C2;
     padding: 5%;
     font-size: 32px;
+    border-color: #5B99C2;
 
 }
 
@@ -39,17 +52,13 @@
     top: 25%;
     left: 15%;
     transform: translateY(-100%);
-    color: #b5b5b5;
+    color: #5B99C2;
     font-size: 40px;
     font-family: "Inter";
     pointer-events: none;
 }
 
 textarea:focus ~ label{    
-    /*top: 15%;
-    left: 15%;
-    font-size: 30px;
-    padding: 0 10px;*/
     display: none;
 }
 
@@ -121,14 +130,18 @@ textarea:focus ~ label{
     /*background-color: #6EACDA;*/
     margin: 0.3%;
     width: 24.5%;
-    pad: 8%;
+    background-color: #021526;
+    color: #5B99C2;
+    border: 2px solid #5B99C2;
 }
 
 .button__desencripta:hover{
     /*background-color: #6EACDA;*/
     margin: 0.3%;    
     width: 24.5%;
-    pad: 8%;
+    background-color: #021526;
+    color: #5B99C2;
+    border: 2px solid #5B99C2;
 }
 
 .salida__texto{
@@ -136,7 +149,7 @@ textarea:focus ~ label{
     justify-content: center;
     position: absolute;
     width: 30%;
-    height: 90%;    
+    height: 87%;    
     left: 60%;
     top: 5%;
     background: #f6f3f3;   
@@ -159,7 +172,7 @@ textarea:focus ~ label{
     padding: 1%;
     top: 60%;
     gap: 16px;
-    width: 100%;
+    width: 80%;
     position: absolute;
     background: #f6f3f3;
 }
@@ -171,7 +184,7 @@ textarea:focus ~ label{
     font-family: "Inter";  
     font-style: normal;
     font-size: 24px;
-    color: #343A40;
+    color: #5B99C2;
 }
 
 .salida__texto_encriptado p{
@@ -179,17 +192,17 @@ textarea:focus ~ label{
     font-family: "Inter";
     font-style: normal;
     font-size: 16px;
-    color: #495057;
+    color: #021526;
 }
 .output__button{
-    display: flex; /*lo ahce flexxible para poder colocar propiedades y se acomode*/
+    display: flex; /*lo hace flexible para poder colocar propiedades y se acomode*/
     align-items: center;
     justify-content: center;
     padding: 1% 0;
     position: absolute;
     width: 80%;
-    left: 12%;
-    top: 87%;
+    height: 15%;
+    top: 84%;
 }
 
 .button__copiar{
@@ -216,8 +229,10 @@ textarea:focus ~ label{
 
 .button__copiar:hover{
     margin: 0.3%;
-    width: 100%;
-    pad: 8%;
+    width: 100%;    
+    background-color: #e4e7ea;
+    color: #021526;
+    border: 2px solid #021526;
 }
 
 .footer{
@@ -228,7 +243,7 @@ textarea:focus ~ label{
     justify-content: center;
     width: 100%;
     height: 5%;
-    background-color: #1A4870;
+    background-color: #5B99C2;
     padding: 5px;
     font-family: "Inter";
 }
@@ -259,19 +274,28 @@ textarea:focus ~ label{
     width: 30px;
 }
 
+
 /*responsive desing*/
 
 @media (max-width: 90em){
     body{
         background: #021526;
+        min-height: 100vh;   
+        display: grid;
+        grid-template-rows: auto 1fr auto;
     }
+    
     .main{
         display: flex;
         flex-direction: column;
         justify-items: center;
-        align-items: center;
+        align-items: center;        
     }
-
+    
+    .logo img{
+        height: 100px;
+        width: 100px;
+    }
     .entrada__texto{
         width: 100%;
         height: 100%;      
@@ -282,7 +306,7 @@ textarea:focus ~ label{
         top: 18%;
         left: 15%;
         transform: translateY(-100%);
-        color: #b5b5b5;
+        color: #5B99C2;
         font-size: 40px;
         font-family: "Inter";
         pointer-events: none;
@@ -314,7 +338,7 @@ textarea:focus ~ label{
         width: 80%;
         height: 15%;
         left: 10%;
-        top:68%;
+        top:62%;
         gap: 10%;
     }
 
@@ -339,7 +363,7 @@ textarea:focus ~ label{
         width: 80%;
         height: auto;
         left: 10%;
-        top: 90%;
+        top: 80%;
         text-align: center;   
     }
 
@@ -353,7 +377,7 @@ textarea:focus ~ label{
         position: relative;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 80%;
         height: 100%;
         margin: 5%;
         border-radius: 32px;
@@ -363,13 +387,13 @@ textarea:focus ~ label{
         font-family: "Inter";  
         font-style: normal;
         font-size: 24px;
-        color: #343A40;
+        color: #5B99C2;
         text-align: center;
     }  
 
     .output__button{
         display: flex;        
-        position: relative;
+        position: absolute;
         margin: 3%;
         left: 0%;
         width: 90%;        
@@ -381,7 +405,27 @@ textarea:focus ~ label{
         background: #021526;
         color: #e4e7ea;
     }
+    .footer{        
+        position: absolute;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 5%;
+        margin-bottom: 0%;
+        margin-top: 75%;
+        background-color: #5B99C2;
+        font-family: "Inter";
+    }
 
+    .redes__sociales{
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer h2{
+        font-size: 20px;
+    }
     
 }
 @media (max-width: 57.5em){
@@ -393,6 +437,11 @@ textarea:focus ~ label{
         flex-direction: column;
         justify-items: center;
         align-items: center;
+    }
+        
+    .logo img{
+        height: 75px;
+        width: 75px;
     }
 
     .entrada__texto{
@@ -408,7 +457,7 @@ textarea:focus ~ label{
         top: 18%;
         left: 15%;
         transform: translateY(-100%);
-        color: #b5b5b5;
+        color: #5B99C2;
         font-size: 30px;
         font-family: "Inter";
         pointer-events: none;
@@ -416,7 +465,7 @@ textarea:focus ~ label{
 
     .area__texto{
         width: 80%;
-        height: 50%;
+        height: 45%;
         left: 10%;
         top: 10%;
         font-size: 16px;
@@ -425,7 +474,7 @@ textarea:focus ~ label{
     .indicaciones{
         width: 80%;
         left: 10%;
-        top: 61%;
+        top: 57%;
     }
 
     .indicaciones p{
@@ -440,14 +489,14 @@ textarea:focus ~ label{
         width: 80%;
         height: 15%;
         left: 10%;
-        top: 65%;
+        top: 59%;
         gap: 10%;
     }
 
     .button__encripta, .button__desencripta{
         width: 100%;
         border-radius: 24px;
-        padding: 5%;
+        padding: 3%;
     }
 
     .button__desencripta:hover, 
@@ -465,7 +514,7 @@ textarea:focus ~ label{
         width: 80%;
         height: auto;
         left: 10%;
-        top: 85%;
+        top: 76%;
         text-align: center;   
     }
 
@@ -489,14 +538,13 @@ textarea:focus ~ label{
         font-family: "Inter";  
         font-style: normal;
         font-size: 24px;
-        color: #343A40;
+        color: #5B99C2;
         text-align: center;
     }  
 
     .output__button{
         display: flex;        
-        position: relative;
-        margin: 3%;
+        position: absolute;
         left: 0%;
         width: 90%;        
     }
@@ -507,7 +555,24 @@ textarea:focus ~ label{
         background: #021526;
         color: #e4e7ea;
     }
-
     
+    .footer{
+        position: absolute;;
+        width: 100%;
+        height: 5%;
+        background-color: #5B99C2;
+        padding: 5px;
+        top: 60%;
+        font-family: "Inter";
+    }
+
+    .redes__sociales{
+        width: 15px;
+        height: 15px;
+    }
+
+    .footer h2{
+        font-size: 10px;
+    }
 }
 
